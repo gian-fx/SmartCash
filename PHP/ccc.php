@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pmp = $nada;
     }
 
-    $cccresult = $pme + $pmr - $pmp
-
+    $cccresult = $pme + $pmr - $pmp;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="resultado">
                     <p>Seu ciclo de Conversão de Caixa é</p>
-                    <span><?= $cccresult ?></span>
+                    <p class="resultadoccc"><?= $cccresult ?> DIAS</p>
             </div>
         </div>
 
