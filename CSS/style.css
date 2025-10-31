@@ -18,6 +18,7 @@ body {
     font-family: "Oswald", sans-serif;
     font-size: 48px;
     color: #F0F0F0;
+    text-decoration: none;
 }
 
 .logo {
@@ -50,6 +51,7 @@ body {
     font-weight: bold;
     font-size: 20px;
     transition: ease-in-out 200ms;
+    text-decoration: none;
 }
 
 .itensnav:hover{
@@ -100,8 +102,17 @@ body {
     font-size: 28px;
 }
 
+.voltar img {
+    transition: 200ms;
+}
+
 .voltar p {
     transform: translatey(-4px);
+    margin: 0px;
+}
+
+.voltar img:hover {
+    transform: scale(1.1);
 }
 
 
