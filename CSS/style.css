@@ -65,6 +65,7 @@ body {
     align-items: center;
     border-radius: 5px;
     transition: 200ms;
+    box-shadow: 5px 7px 5px 0px rgba(0,0,0,0.4);
 }
 
 .btns p {
@@ -85,6 +86,8 @@ body {
 
 .btns:hover{
     transform: scale(1.02);
+    box-shadow: 5px 7px 11px 6px rgba(0,0,0,0.28);
+    font-weight: bold;
 }
 
 
