@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+        ,<link rel="stylesheet" href="../CSS/gian.css">
         <title>SmartCash</title>
     </head>
     <body>
@@ -30,7 +31,41 @@
 
         <div class="voltar">
             <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Análise Marginal</p>
+            <p style="text-align: center; width: 100%;margin-bottom: 1vh;" >Análise Marginal</p>
+        </div>
+
+        <div class="formgrid">
+            <div class="formcontainer">
+                <form method="POST" action="../PHP/am.php">
+                    <div class="pme">
+                        <label for="unidades">Informe a quantidade(em unidades):</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="unidades" name="unidades">
+                    </div>
+
+                    <div class="pmr">
+                        <label for="preco">Preço de venda dos produtos:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="preco" name="preco">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="gv">Gastos variaveis:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="gv" name="gv">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="gf">Gastos fixos:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="gf" name="gf">
+                    </div>
+
+                    
+                    <div class="btn">
+                        <button type="submit">ENVIAR</button>
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
 
     </body>

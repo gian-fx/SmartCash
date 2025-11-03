@@ -1,0 +1,26 @@
+.resultado{
+    width: 500px; 
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #19688E;
+    color: white;
+    margin: 0 auto;
+    border-radius: 10%;
+    
+}
+
+.resultado h1 {
+    margin-bottom: 5vh;
+}
+
+.resultado p {
+    margin-bottom: 1.5vh;
+    font-size: 20px;
+}
+
+.results {
+    color: rgb(233, 133, 133);
+}
