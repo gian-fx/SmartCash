@@ -13,12 +13,12 @@
     align-items: center;
 }
 
-.pme {
+.prmej {
     position: relative;
     margin-bottom: 50px;
 }
 
-.pme label{
+.prmej label{
     position: absolute;
     left: 0;
     transform: translatey(-46px);
@@ -26,7 +26,7 @@
     font-size: 26px;
 } 
 
-.pme input {
+.prmej input {
     width: 600px;
     height: 60px;
     border: 2px solid #064665;
@@ -38,34 +38,34 @@
     font-size: 16px;
 }
 
-.pme input::placeholder {
+.prmej input::placeholder {
     color: #F0F0F0;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
 }
 
-.pme input:focus {
+.prmej input:focus {
     border: 2px solid #064665;
     outline: none;
     box-shadow: 0 0 0 0; 
 }   
 
-.pme input::-webkit-outer-spin-button,
-.pme input::-webkit-inner-spin-button {
+.prmej input::-webkit-outer-spin-button,
+.prmej input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.pme input[type=number] {
+.prmej input[type=number] {
   -moz-appearance: textfield;
 }
 
-.pmr {
+.prmrj {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 25px;
 }
 
-.pmr label{
+.prmrj label{
     position: absolute;
     left: 0;
     transform: translatey(-46px);
@@ -73,7 +73,7 @@
     font-size: 26px;
 } 
 
-.pmr input {
+.prmrj input {
     width: 600px;
     height: 60px;
     border: 2px solid #064665;
@@ -85,25 +85,25 @@
     font-size: 16px;
 }
 
-.pmr input::placeholder {
+.prmrj input::placeholder {
     color: #F0F0F0;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
 }
 
-.pmr input:focus {
+.prmrj input:focus {
     border: 2px solid #064665;
     outline: none;
     box-shadow: 0 0 0 0; 
 }   
 
-.pmr input::-webkit-outer-spin-button,
-.pmr input::-webkit-inner-spin-button {
+.prmrj input::-webkit-outer-spin-button,
+.prmrj input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.pmr input[type=number] {
+.prmrj input[type=number] {
   -moz-appearance: textfield;
 }
 
@@ -123,10 +123,10 @@
     height: 50px;
 }
 
-.resultado .resultadoCo {
+.resultado span{
     display: block;
     position: relative;
-    transform: translatey(70px);
+    transform: translatey(100px);
     font-family: "Oswald", sans-serif;
     font-size: 36px;
     color: #E0E0E0;
