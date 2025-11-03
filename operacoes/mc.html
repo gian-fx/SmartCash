@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="/CSS/jose.css">
         <title>SmartCash</title>
     </head>
     <body>
@@ -32,5 +33,31 @@
             <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
             <p>Margem de Contribuição</p>
         </div>
+
+        <div class="formgrid">
+        <div class="formcontainer">
+            <form action="/PHP/co.php" method="POST">
+
+                <div class="pme">
+                    <label class="pme" for="pv">Preço de Venda </label>
+                    <input class="pme" type="number" placeholder="Adicione sua informação aqui" required id="pv" name="pv">
+                </div>
+
+                <div class="pmr">
+                    <label class="pmr" for="gv">Gasto Variavel </label>
+                    <input class="pmr" type="number" placeholder="Adicione sua informação aqui" required id="gv" name="gv">
+                </div>
+
+                <div class="btn">
+                    <button type="submit">ENVIAR</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="resultado">
+            <p>Sua Margem de Contribuição é</p>
+            <span><?= $mcresult ?></span>
+        </div>
+    </div>
     </body>
 </html>

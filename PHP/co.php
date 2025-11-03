@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="formcontainer">
             <form action="/PHP/co.php" method="post">
 
-                <div class="pv">
+                <div class="pme">
                     <label for="pme">Preço Médio de Estoque </label>
                     <input type="number" placeholder="Adicione sua informação aqui" required id="pme" name="pme">
                 </div>
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div>
         <div class="resultado">
-            <p>Seu ciclo de operação é</p>
+            <p>Seu Ciclo de Operação é</p>
             <span><?= $coresult ?></span>
         </div>
     </div>
