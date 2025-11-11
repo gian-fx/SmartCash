@@ -1,0 +1,109 @@
+.formgrid {
+    display: flex;
+    justify-content: center;
+    margin-top: 12vh;
+    gap: 240px
+}
+
+.formcontainer {
+    display: flex;
+    width: 600px;
+    height: 420px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.input label{
+    position: absolute;
+    left: 0;
+    transform: translatey(-46px);
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+} 
+
+.input input {
+    width: 600px;
+    height: 60px;
+    border: 2px solid #064665;
+    border-radius: 3px;
+    background-color: #19688E;
+    color: #F0F0F0;
+    padding-left: 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.input input::placeholder {
+    color: #F0F0F0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.input input:focus {
+    border: 2px solid #064665;
+    outline: none;
+    box-shadow: 0 0 0 0; 
+}   
+
+.input input::-webkit-outer-spin-button,
+.input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.resultado {
+    width: 560px;
+    height: 420px;
+    text-align: center;
+    background-color: #002638;
+    border-radius: 5px;
+}
+
+.resultado p {
+    font-family: "Nunito", sans-serif;
+    font-size: 26px;
+    color: #E0E0E0;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.resultado .resultadoccc {
+    display: block;
+    position: relative;
+    transform: translatey(70px);
+    font-family: "Oswald", sans-serif;
+    font-size: 36px;
+    color: #E0E0E0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #328AB4;
+    background: linear-gradient(180deg,rgba(50, 138, 180, 1) 0%, rgba(25, 104, 142, 1) 100%);
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 200ms;
+}
+
+.btn button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
