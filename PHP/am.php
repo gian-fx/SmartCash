@@ -1,17 +1,21 @@
 <?php
 
+function to_float($valor) {
+    $valor = str_replace(',', '.', $valor); // substitui vírgula por ponto
+    return (float)$valor;
+}
 
-$qtd_atual               = $_POST['qtd_atual'] ?? null;
-$qtd_proposta            = $_POST['qtd_proposta'] ?? null;
-$preco_atual             = $_POST['preco_atual'] ?? null;
-$preco_proposto          = $_POST['preco_proposto'] ?? null;
-$inadimplencia_atual     = $_POST['inadimplencia_atual'] ?? null;
-$inadimplencia_proposta  = $_POST['inadimplencia_proposta'] ?? null;
-$prazo_atual             = $_POST['prazo_atual'] ?? null;
-$prazo_proposto          = $_POST['prazo_proposto'] ?? null;
-$gasto_unitario_atual    = $_POST['gasto_unitario_atual'] ?? null;
-$gasto_unitario_proposto = $_POST['gasto_unitario_proposto'] ?? null;
-$taxa_financeira         = $_POST['taxa_financeira'] ?? null;
+$qtd_atual               = to_float($_POST['qtd_atual'] ?? 0);
+$qtd_proposta            = to_float($_POST['qtd_proposta'] ?? 0);
+$preco_atual             = to_float($_POST['preco_atual'] ?? 0);
+$preco_proposto          = to_float($_POST['preco_proposto'] ?? 0);
+$inadimplencia_atual     = to_float($_POST['inadimplencia_atual'] ?? 0);
+$inadimplencia_proposta  = to_float($_POST['inadimplencia_proposta'] ?? 0);
+$prazo_atual             = to_float($_POST['prazo_atual'] ?? 0);
+$prazo_proposto          = to_float($_POST['prazo_proposto'] ?? 0);
+$gasto_unitario_atual    = to_float($_POST['gasto_unitario_atual'] ?? 0);
+$gasto_unitario_proposto = to_float($_POST['gasto_unitario_proposto'] ?? 0);
+$taxa_financeira         = to_float($_POST['taxa_financeira'] ?? 0);
 
 // VERIFICAÇÃO CORRETA
 $campos = [
@@ -108,6 +112,7 @@ $lucro_liquido_formatado = moeda($analise_marginal);
     </p>
 
 </div>
+
 
 
 </body>

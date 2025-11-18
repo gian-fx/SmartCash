@@ -36,7 +36,7 @@
 
 
 <div class="formgrid">
-    <form method="POST" action="../PHP/am.php">
+    <form method="POST" action="/PHP/am.php">
 
 <div class="forms-lado-a-lado">
 
@@ -49,12 +49,13 @@
 
         <div class="pmr">
             <label for="preco_atual">Preço de venda atual:</label>
-            <input required type="number" id="preco_atual" name="preco_atual">
+            <input required type="text" id="preco_atual" name="preco_atual">
         </div>
 
         <div class="pmp">
             <label for="inadimplencia_atual">Inadimplência atual:</label>
-            <input required type="number" id="inadimplencia_atual" name="inadimplencia_atual">
+            <input required type="number" id="inadimplencia_atual" name="inadimplencia_atual" step="0.01" lang="pt-BR" />
+
         </div>
 
         <div class="pmp">
@@ -82,12 +83,13 @@
 
         <div class="pmr">
             <label for="preco_proposto">Preço de venda proposto:</label>
-            <input required type="number" id="preco_proposto" name="preco_proposto">
+            <input required type="text" id="preco_proposto" name="preco_proposto" >
+
         </div>
 
         <div class="pmp">
             <label for="inadimplencia_proposta">Inadimplência proposta:</label>
-            <input required type="number" id="inadimplencia_proposta" name="inadimplencia_proposta">
+            <input required type="number" id="inadimplencia_proposta" name="inadimplencia_proposta" step="0.01" lang="pt-BR" />
         </div>
 
         <div class="pmp">
@@ -111,5 +113,5 @@
 </div>
 
 
-    </body>
+</body>
 </html>
