@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="/CSS/gian.css">
         <title>SmartCash</title>
     </head>
     <body>
@@ -29,19 +30,35 @@
         </div>
 
         <div class="voltar">
-            <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Índices Financeiros</p>
+            <a href="/operacoes/indice_liquidez.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
+            <p>Indice de liquidez Imediata</p>
         </div>
 
-        <div class="botoes">
-            <div class="apertar">
-                <a href="/operacoes/indice_liquidez.html" class="clicar">Índices de liquidez</a>
+        <div class="formgrid">
+            <div class="formcontainer">
+                <form method="POST" action="/PHP/indice_liquidez_imediata.php">
+                    <div class="pme">
+                        <label for="disp">Disponivel</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="disp" name="disp">
+                    </div>
+
+                    <div class="pmr">
+                        <label for="pc">Passivo circulante</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="pc" name="pc">
+                    </div>
+
+
+                    <div class="btn">
+                        <button type="submit">ENVIAR</button>
+                    </div>
+
+                </form>
+
             </div>
-            <div class="apertar">
-                <a href="/operacoes/indice_endividamento.html" class="clicar">Índices de endividamento</a>
-            </div>
-            <div class="apertar">
-                <a href="/operacoes/indice_rentabilidade.html" class="clicar">Índices de rentabilidade</a>
+
+            <div class="resultado_lc">
+                    <p>O indice de liquidez imediata é :</p>
+                    <span class="resultadolcc" ><?= $result ?></span>
             </div>
         </div>
 
