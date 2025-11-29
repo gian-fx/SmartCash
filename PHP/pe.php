@@ -18,14 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $margem_contribuicao = $nada;
     }
-
-    $coresult = $gastos_fixos / $margem_contribuicao;
-
-    function moeda($v){
-        return "R$ " . number_format($v, 2, ',', '.');
+    if (isset($_POST['preco_venda']) && !empty($_POST['preco_venda'])){
+        $preco_venda = $_POST['preco_venda'];
+    } else {
+        $preco_venda = $nada;
     }
 
-    $coresultFormatado = moeda($coresult);
+    $peresult = $gastos_fixos / $margem_contribuicao;
+    $peresultValor = $peresult * $preco_venda;
+
+   
 }
 ?>
 
@@ -87,8 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
             <div class="resultado">
-                <p>Seu ponto de equilibrio é</p>
-                <span><?= $coresultFormatado ?></span>
+                <p>Seu ponto de equilibrio é de</p>
+                <p><?= $peresult ?> Unidades</p>
+                <p>Seu ponto de equilibrio em valor é</p>
+                <p><?= $peresultValor ?> Reais</p>
             </div>
         </div>
     </body>

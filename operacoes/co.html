@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/jose.css">
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/gian.css">
+    <link rel="stylesheet" href="/CSS/jose.css">
     <title>SmartCash</title>
 </head>
 
@@ -41,13 +42,23 @@
             <form action="/PHP/co.php" method="POST">
 
                 <div class="prmej">
-                    <label for="prme">Preço Médio de Estoque </label>
-                    <input type="number" placeholder="Adicione sua informação aqui" required id="prme" name="prme">
+                    <label for="prme">Preço Médio de Estoque (DIAS)</label>
+                    <input type="number" placeholder="Adicione sua informação aqui"  required id="prme" name="prme">
                 </div>
 
                 <div class="prmrj">
-                    <label for="prmr">Preço Médio de Recebimento </label>
+                    <label for="prmr">Preço Médio de Recebimento (DIAS)</label>
                     <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmr">
+                </div>
+<!-- CO de VALOR -->
+                <div class="prmej">
+                    <label for="prmeV">Preço Médio de Estoque (VALOR)</label>
+                    <input type="number" placeholder="Adicione sua informação aqui" required id="prme" name="prmeV">
+                </div>
+
+                <div class="prmrj">
+                    <label for="prmrV">Preço Médio de Recebimento (VALOR)</label>
+                    <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmrV">
                 </div>
 
                 <div class="btn">
@@ -57,8 +68,10 @@
             </form>
         </div>
         <div class="resultado">
-            <p>Seu ciclo de operação é</p>
-            <span><?= $coresult ?></span>
+            <p>Seu Ciclo de Operação de Tempo é</p>
+            <p><?= $coresult ?></p>
+            <p>Seu Ciclo de Operação de Valor é</p>
+            <p><?= $coValorresult ?></p>
         </div>
     </div>
 </body>
