@@ -36,11 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pcpncresult = $pc + $pnc;
     $pctresult = $pcpncresult / $pl;
     $pctresultpercent = $pctresult * $mult;
-
-    $formatado = number_format($pctresult, 2, ',', '.');
-    $formatado2 = number_format($pctresultpercent, 2, ',', '.');
-    $pctresult = $formatado;
-    $pctresultpercent = $formatado2;
 }
 
 ?>
