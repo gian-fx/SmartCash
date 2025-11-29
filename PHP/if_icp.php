@@ -8,20 +8,12 @@ $exibir = $_SERVER['REQUEST_METHOD'] == 'POST' ? true : false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (isset($_POST['pc']) && !empty($_POST['pc'])) {
+    if (isset($_POST['im']) && !empty($_POST['im'])) {
 
-        $pc = $_POST['pc'];
+        $im = $_POST['im'];
     } else {
 
-        $pc = $nada;
-    }
-
-    if (isset($_POST['pnc']) && !empty($_POST['pnc'])) {
-
-        $pnc = $_POST['pnc'];
-    } else {
-
-        $pnc = $nada;
+        $im = $nada;
     }
 
     if (isset($_POST['pl']) && !empty($_POST['pl'])) {
@@ -33,12 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $mult = 100;
-    $pcpncresult = $pc + $pnc;
-    $pctresult = $pcpncresult / $pl;
-    $pctresultpercent = $pctresult * $mult;
+    $icpresult = $im / $pl;
+    $icpresultpercent = $icpresult * $mult;
 
-    $formatado = number_format($pctresult, 3, ',', '.');
-    $formatado2 = number_format($pctresultpercent, 2, ',', '.');
+    $formatado = number_format($icpresult, 3, ',', '.');
+    $formatado2 = number_format($icpresultpercent, 2, ',', '.');
     $ceresult = $formatado;
     $ceresultpercent = $formatado2;
 }
@@ -80,20 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="voltar">
             <a href="/operacoes/indice_endividamento.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Participação de Capital de Terceiros</p>
+            <p>Imobilização do Capital Próprio</p>
         </div>
 
         <div class="formgrid">
             <div class="formcontainer">
-                <form method="POST" action="/PHP/if_pct.php">
-                    <div class="pc">
-                        <label for="pc">Passivo Criculante</label>
-                        <input required type="text" placeholder="Adicione sua informação aqui" id="pc" name="pc">
-                    </div>
-
-                    <div class="pnc">
-                        <label for="pnc">Passivo Não Circulante</label>
-                        <input required type="text" placeholder="Adicione sua informação aqui" id="pnc" name="pnc">
+                <form method="POST" action="/PHP/if_icp.php">
+                    <div class="im">
+                        <label for="im">Imobilizados</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="im" name="im">
                     </div>
 
                     <div class="pl">
@@ -110,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="resultado_lc">
-                    <p>A Participação de Capital de Terceiros é:</p>
-                    <span class="resultadolcc"><?= $formatado ?> ou <?= $formatado2 ?>%</span>
+                    <p>A imobilização do Capital Próprio é de:</p>
+                    <span class="resultadolcc"><p><?= $formatado ?> ou <?= $formatado2 ?>%</p></span>
             </div>
         </div>
 
