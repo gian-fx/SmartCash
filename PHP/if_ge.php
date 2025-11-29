@@ -24,27 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $pnc = $nada;
     }
 
-    if (isset($_POST['pl']) && !empty($_POST['pl'])) {
+    if (isset($_POST['atvt']) && !empty($_POST['atvt'])) {
 
-        $pl = $_POST['pl'];
+        $atvt = $_POST['atvt'];
     } else {
 
-        $pl = $nada;
+        $atvt = $nada;
     }
 
     $mult = 100;
     $pcpncresult = $pc + $pnc;
-    $pctresult = $pcpncresult / $pl;
-    $pctresultpercent = $pctresult * $mult;
+    $geresult = $pcpncresult / $atvt;
+    $geresultpercent = $geresult * $mult;
 
-    $formatado = number_format($pctresult, 2, ',', '.');
-    $formatado2 = number_format($pctresultpercent, 2, ',', '.');
-    $pctresult = $formatado;
-    $pctresultpercent = $formatado2;
+    $formatado = number_format($geresult, 2, ',', '.');
+    $formatado2 = number_format($geresultpercent, 2, ',', '.');
+    $ceresult = $formatado;
+    $ceresultpercent = $formatado2;
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -80,12 +79,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="voltar">
             <a href="/operacoes/indice_endividamento.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Participação de Capital de Terceiros</p>
+            <p>Grau de Endividamento</p>
         </div>
 
         <div class="formgrid">
             <div class="formcontainer">
-                <form method="POST" action="/PHP/if_pct.php">
+                <form method="POST" action="/PHP/if_ge.php">
                     <div class="pc">
                         <label for="pc">Passivo Criculante</label>
                         <input required type="text" placeholder="Adicione sua informação aqui" id="pc" name="pc">
@@ -96,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input required type="text" placeholder="Adicione sua informação aqui" id="pnc" name="pnc">
                     </div>
 
-                    <div class="pl">
-                        <label for="pl">Patrimônio Líquido</label>
-                        <input required type="text" placeholder="Adicione sua informação aqui" id="pl" name="pl">
+                    <div class="atvt">
+                        <label for="atvt">Ativo Total</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="atvt" name="atvt">
                     </div>
 
                     <div class="btn">
@@ -110,8 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="resultado_lc">
-                    <p>A Participação de Capital de Terceiros é:</p>
-                    <span class="resultadolcc"><?= $pctresult ?> ou <?= $pctresultpercent ?>%</span>
+                    <p>O Grau de Endividamento é:</p>
+                    <span class="resultadolcc"><p><?= $formatado ?> ou <?= $formatado2 ?>%</p></span>
             </div>
         </div>
 
