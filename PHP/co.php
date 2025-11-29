@@ -20,6 +20,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $coresult = $prme + $prmr;
+
+    // CO de VALOR
+     if (isset($_POST['prmeV']) && !empty($_POST['prmeV'])) {
+        $prmeV = $_POST['prmeV'];
+        $prmeV = ($prmeV * $prme) / 360;
+    } else {
+        $prmeV = $nada;
+    }
+
+    if (isset($_POST['prmrV']) && !empty($_POST['prmrV'])) {
+        $prmrV = $_POST['prmrV'];
+        $prmrV = ($prmrV * $prmr) / 360;
+    } else {
+        $prmrV = $nada;
+    }
+
+    $coValorresult = $prmeV + $prmrV;
+    $formatado = number_format($coValorresult, 2, ',', '.');
+    $coValorresult = $formatado;
 }
 ?>
 <!DOCTYPE html>
@@ -73,6 +92,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="prmr">Preço Médio de Recebimento </label>
                     <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmr">
                 </div>
+                <!-- CO de VALOR -->
+                <div class="prmej">
+                    <label for="prmeV">Preço Médio de Estoque (VALOR)</label>
+                    <input type="number" placeholder="Adicione sua informação aqui" required id="prme" name="prmeV">
+                </div>
+
+                <div class="prmrj">
+                    <label for="prmrV">Preço Médio de Recebimento (VALOR)</label>
+                    <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmrV">
+                </div>
 
                 <div class="btn">
                     <button type="submit">ENVIAR</button>
@@ -81,8 +110,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div>
         <div class="resultado">
-            <p>Seu Ciclo de Operação é</p>
-            <span><?= $coresult ?></span>
+            <p>Seu Ciclo de Operação de Tempo é</p>
+            <p><?= $coresult ?></p>
+            <p>Seu Ciclo de Operação de Valor é</p>
+            <p><?= $coValorresult ?></p>
         </div>
     </div>
 </body>

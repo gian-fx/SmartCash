@@ -1,6 +1,7 @@
 <?php
 
-function to_float($valor) {
+function to_float($valor)
+{
     $valor = str_replace(',', '.', $valor); // substitui vírgula por ponto
     return (float)$valor;
 }
@@ -63,7 +64,8 @@ $fin_proposta = ($qtd_proposta * $preco_proposto * ($prazo_proposto / 360)) * $t
 // 5️⃣ ANÁLISE MARGINAL
 $analise_marginal = ($lucro_proposta - $lucro_atual) - ($fin_proposta - $fin_atual);
 
-function moeda($v){
+function moeda($v)
+{
     return "R$ " . number_format($v, 2, ',', '.');
 }
 
@@ -74,46 +76,53 @@ $lucro_liquido_formatado = moeda($analise_marginal);
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/vini.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <title>Resultado - Análise Marginal</title>
 </head>
+
 <body>
 
-<div class="navbarbg">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="/index.html">SmartCash</a>
-                    <img src="/IMG/dollar.svg" alt="logo.">
-                </div>
-                <div class="itens">
-                    <ul>
-                        <li><a class="itensnav" href="/operacoes/ccc.html">CCC</a></li>
-                        <li><a class="itensnav" href="/operacoes/co.html">CO</a></li>
-                        <li><a class="itensnav" href="/operacoes/am.html">AM</a></li>
-                        <li><a class="itensnav" href="/operacoes/pe.html">PE</a></li>
-                        <li><a class="itensnav" href="/operacoes/mc.html">MC</a></li>
-                        <li><a class="itensnav" href="/operacoes/gao.html">GAO</a></li>
-                        <li><a class="itensnav" href="/operacoes/if.html">IF</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    <div class="navbarbg">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/index.html">SmartCash</a>
+                <img src="/IMG/dollar.svg" alt="logo.">
+            </div>
+            <div class="itens">
+                <ul>
+                    <li><a class="itensnav" href="/operacoes/ccc.html">CCC</a></li>
+                    <li><a class="itensnav" href="/operacoes/co.html">CO</a></li>
+                    <li><a class="itensnav" href="/operacoes/am.html">AM</a></li>
+                    <li><a class="itensnav" href="/operacoes/pe.html">PE</a></li>
+                    <li><a class="itensnav" href="/operacoes/mc.html">MC</a></li>
+                    <li><a class="itensnav" href="/operacoes/gao.html">GAO</a></li>
+                    <li><a class="itensnav" href="/operacoes/if.html">IF</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
+    <div class="voltar">
+        <a href="/operacoes/am.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
+        <p>Ciclo Operacional</p>
+    </div>
 
-<div class="resultado">
-     <h1>Análise Marginal Completa</h1>
+    <div class="resultado">
+        <h1>Análise Marginal Completa</h1>
 
-    <p>
-        Lucro Líquido da Proposta: 
-        <span class="results destaque"><?= $lucro_liquido_formatado ?></span>
-    </p>
+        <p>
+            Lucro Líquido da Proposta:
+            <span class="results destaque"><?= $lucro_liquido_formatado ?></span>
+        </p>
 
-</div>
+    </div>
 
 
 
 </body>
+
 </html>

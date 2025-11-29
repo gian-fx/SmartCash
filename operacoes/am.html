@@ -1,117 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../CSS/style.css">
-        <link rel="stylesheet" href="../CSS/vini.css">
-        <title>SmartCash</title>
-    </head>
-    <body>
 
-        <div class="navbarbg">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="/index.html">SmartCash</a>
-                    <img src="/IMG/dollar.svg" alt="logo.">
-                </div>
-                <div class="itens">
-                    <ul>
-                        <li><a class="itensnav" href="/operacoes/ccc.html">CCC</a></li>
-                        <li><a class="itensnav" href="/operacoes/co.html">CO</a></li>
-                        <li><a class="itensnav" href="/operacoes/am.html">AM</a></li>
-                        <li><a class="itensnav" href="/operacoes/pe.html">PE</a></li>
-                        <li><a class="itensnav" href="/operacoes/mc.html">MC</a></li>
-                        <li><a class="itensnav" href="/operacoes/gao.html">GAO</a></li>
-                        <li><a class="itensnav" href="/operacoes/if.html">IF</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/vini.css">
+    <title>SmartCash</title>
+</head>
 
-        <div class="voltar">
-            <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p style="text-align: center; width: 100%;margin-bottom: 1vh;" >Análise Marginal</p>
-        </div>
+<body>
 
-
-<div class="formgrid">
-    <form method="POST" action="/PHP/am.php">
-
-<div class="forms-lado-a-lado">
-
-    <!-- PARTE ATUAL -->
-    <div class="formcontainer"> 
-        <div class="pme">
-            <label for="qtd_atual">Informe a quantidade atual:</label>
-            <input required type="number" id="qtd_atual" name="qtd_atual">
-        </div>
-
-        <div class="pmr">
-            <label for="preco_atual">Preço de venda atual:</label>
-            <input required type="text" id="preco_atual" name="preco_atual">
-        </div>
-
-        <div class="pmp">
-            <label for="inadimplencia_atual">Inadimplência atual:</label>
-            <input required type="number" id="inadimplencia_atual" name="inadimplencia_atual" step="0.01" lang="pt-BR" />
-
-        </div>
-
-        <div class="pmp">
-            <label for="prazo_atual">Prazo atual:</label>
-            <input required type="number" id="prazo_atual" name="prazo_atual">
-        </div>
-
-        <div class="pmp">
-            <label for="gasto_unitario_atual">Gasto unitário atual:</label>
-            <input required type="number" id="gasto_unitario_atual" name="gasto_unitario_atual">
-        </div>
-
-        <div class="pmp">
-            <label for="taxa_financeira">Taxa Financeira:</label>
-            <input required type="number" id="taxa_financeira" name="taxa_financeira">
-        </div>
+    <div class="navbarbg">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/index.html">SmartCash</a>
+                <img src="/IMG/dollar.svg" alt="logo.">
+            </div>
+            <div class="itens">
+                <ul>
+                    <li><a class="itensnav" href="/operacoes/ccc.html">CCC</a></li>
+                    <li><a class="itensnav" href="/operacoes/co.html">CO</a></li>
+                    <li><a class="itensnav" href="/operacoes/am.html">AM</a></li>
+                    <li><a class="itensnav" href="/operacoes/pe.html">PE</a></li>
+                    <li><a class="itensnav" href="/operacoes/mc.html">MC</a></li>
+                    <li><a class="itensnav" href="/operacoes/gao.html">GAO</a></li>
+                    <li><a class="itensnav" href="/operacoes/if.html">IF</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
-    <!-- PARTE PROPOSTA -->
-    <div class="formcontainer"> 
-        <div class="pme">
-            <label for="qtd_proposta">Informe a quantidade proposta:</label>
-            <input required type="number" id="qtd_proposta" name="qtd_proposta">
-        </div>
-
-        <div class="pmr">
-            <label for="preco_proposto">Preço de venda proposto:</label>
-            <input required type="text" id="preco_proposto" name="preco_proposto" >
-
-        </div>
-
-        <div class="pmp">
-            <label for="inadimplencia_proposta">Inadimplência proposta:</label>
-            <input required type="number" id="inadimplencia_proposta" name="inadimplencia_proposta" step="0.01" lang="pt-BR" />
-        </div>
-
-        <div class="pmp">
-            <label for="prazo_proposto">Prazo proposto:</label>
-            <input required type="number" id="prazo_proposto" name="prazo_proposto">
-        </div>
-
-        <div class="pmp">
-            <label for="gasto_unitario_proposto">Gasto unitário proposto:</label>
-            <input required type="number" id="gasto_unitario_proposto" name="gasto_unitario_proposto">
-        </div>
+    <div class="voltar">
+        <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
+        <p>Análise Marginal</p>
     </div>
 
-</div>
+    <div class="formgrid">
+        <form method="POST" action="/PHP/am.php">
 
-<div class="btn">
-    <button type="submit">ENVIAR</button>
-</div>
+            <div class="forms-lado-a-lado">
 
-</form>
-</div>
+                <!-- PARTE ATUAL -->
+                <div class="formcontainer">
+                    <div class="pme">
+                        <label for="qtd_atual">Informe a quantidade atual:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="qtd_atual"
+                            name="qtd_atual">
+                    </div>
+
+                    <div class="pmr">
+                        <label for="preco_atual">Preço de venda atual:</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="preco_atual"
+                            name="preco_atual">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="inadimplencia_atual">Inadimplência atual:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui"
+                            id="inadimplencia_atual" name="inadimplencia_atual" step="0.01" lang="pt-BR" />
+
+                    </div>
+
+                    <div class="pmp">
+                        <label for="prazo_atual">Prazo atual:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="prazo_atual"
+                            name="prazo_atual">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="gasto_unitario_atual">Gasto unitário atual:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui"
+                            id="gasto_unitario_atual" name="gasto_unitario_atual">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="taxa_financeira">Taxa Financeira:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="taxa_financeira"
+                            name="taxa_financeira">
+                    </div>
+                </div>
+
+                <!-- PARTE PROPOSTA -->
+                <div class="formcontainer">
+                    <div class="pme">
+                        <label for="qtd_proposta">Informe a quantidade proposta:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="qtd_proposta" name="qtd_proposta">
+                    </div>
+
+                    <div class="pmr">
+                        <label for="preco_proposto">Preço de venda proposto:</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="preco_proposto" name="preco_proposto">
+
+                    </div>
+
+                    <div class="pmp">
+                        <label for="inadimplencia_proposta">Inadimplência proposta:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="inadimplencia_proposta" name="inadimplencia_proposta"
+                            step="0.01" lang="pt-BR" />
+                    </div>
+
+                    <div class="pmp">
+                        <label for="prazo_proposto">Prazo proposto:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="prazo_proposto" name="prazo_proposto">
+                    </div>
+
+                    <div class="pmp">
+                        <label for="gasto_unitario_proposto">Gasto unitário proposto:</label>
+                        <input required type="number" placeholder="Adicione sua informação aqui" id="gasto_unitario_proposto" name="gasto_unitario_proposto">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn">
+                <button type="submit">ENVIAR</button>
+            </div>
+
+        </form>
+    </div>
 
 
 </body>
+
 </html>
