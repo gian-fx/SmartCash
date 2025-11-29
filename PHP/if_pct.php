@@ -1,32 +1,45 @@
 <?php
-$result = ""; // valor inicial vazio
+error_reporting(0);
+ini_set('display_errors', 0);
 
-if (isset($_POST["disp"]) && isset($_POST["pc"])) {
+$nada = "Dado não informado!";
 
-    // Recebe os valores
-    $disp = $_POST["disp"];
-    $pc = $_POST["pc"];
+$exibir = $_SERVER['REQUEST_METHOD'] == 'POST' ? true : false;
 
-    // Converte vírgula para ponto
-    $disp = str_replace(",", ".", $disp);
-    $pc = str_replace(",", ".", $pc);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Valida se são números
-    if (!is_numeric($disp) || !is_numeric($pc)) {
-        $result = "Digite apenas números válidos.";
+    if (isset($_POST['pc']) && !empty($_POST['pc'])) {
+
+        $pc = $_POST['pc'];
+    } else {
+
+        $pc = $nada;
     }
-    elseif ($pc == 0) {
-        $result = "Erro: Passivo Circulante não pode ser zero.";
-    }
-    else {
-        // Fórmula: Disponível / Passivo Circulante
-        $li_imediata = $disp / $pc;
 
-        // Formatação (2 casas decimais, vírgula, ponto)
-        $result = number_format($li_imediata, 2, ',', '.');
+    if (isset($_POST['pnc']) && !empty($_POST['pnc'])) {
+
+        $pnc = $_POST['pnc'];
+    } else {
+
+        $pnc = $nada;
     }
+
+    if (isset($_POST['pl']) && !empty($_POST['pl'])) {
+
+        $pl = $_POST['pl'];
+    } else {
+
+        $pl = $nada;
+    }
+
+    $mult = 100;
+    $pcpncresult = $pc + $pnc;
+    $pctresult = $pcpncresult / $pl;
+    $pctresultpercent = $pctresult * $mult;
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -61,23 +74,27 @@ if (isset($_POST["disp"]) && isset($_POST["pc"])) {
         </div>
 
         <div class="voltar">
-            <a href="/operacoes/indice_liquidez.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Indice de liquidez Imediata</p>
+            <a href="/operacoes/indice_endividamento.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
+            <p>Participação de Capital de Terceiros</p>
         </div>
 
         <div class="formgrid">
             <div class="formcontainer">
-                <form method="POST" action="/PHP/indice_liquidez_imediata.php">
-                    <div class="pme">
-                        <label for="disp">Disponivel</label>
-                        <input required type="text" placeholder="Adicione sua informação aqui" id="disp" name="disp">
-                    </div>
-
-                    <div class="pmr">
-                        <label for="pc">Passivo circulante</label>
+                <form method="POST" action="/PHP/if_pct.php">
+                    <div class="pc">
+                        <label for="pc">Passivo Criculante</label>
                         <input required type="text" placeholder="Adicione sua informação aqui" id="pc" name="pc">
                     </div>
 
+                    <div class="pnc">
+                        <label for="pnc">Passivo Não Circulante</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="pnc" name="pnc">
+                    </div>
+
+                    <div class="pl">
+                        <label for="pl">Patrimônio Líquido</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="pl" name="pl">
+                    </div>
 
                     <div class="btn">
                         <button type="submit">ENVIAR</button>
@@ -88,8 +105,8 @@ if (isset($_POST["disp"]) && isset($_POST["pc"])) {
             </div>
 
             <div class="resultado_lc">
-                    <p>O indice de liquidez imediata é :</p>
-                    <span class="resultadolcc" ><?= $result ?></span>
+                    <p>A Participação de Capital de Terceiros é:</p>
+                    <span class="resultadolcc"><?= $pctresult ?> ou <?= $pctresultpercent ?>%</span>
             </div>
         </div>
 

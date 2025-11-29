@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 250px);
+    gap: 5rem;
+}
+
+.clicar{
+    display: flex;
+    width: 360px;
+    height: 200px;
+    border: none;
+    color: #002638;
+    background-color: #328AB4;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.apertar:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 7px 11px 6px rgba(0,0,0,0.28);
+    font-weight: bold;
+}
+
+.apertar a {
+    font-family: "Oswald", sans-serif;
+}
+
+.resultado_lc{
+    width: 560px;
+    height: 420px;
+    text-align: center;
+    background-color: #002638;
+    border-radius: 5px;
+}
+
+.resultado_lc p{
+    font-family: "Nunito", sans-serif;
+    font-size: 26px;
+    color: #E0E0E0;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.resultado_lc .resultadolcc{
+    display: block;
+    position: relative;
+    transform: translatey(70px);
+    font-family: "Oswald", sans-serif;
+    font-size: 36px;
+    color: #E0E0E0;
+}
+
+.pc {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.pc label{
+    position: absolute;
+    left: 0;
+    transform: translatey(-46px);
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+} 
+
+.pc input {
+    width: 600px;
+    height: 60px;
+    border: 2px solid #064665;
+    border-radius: 3px;
+    background-color: #19688E;
+    color: #F0F0F0;
+    padding-left: 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pc input::placeholder {
+    color: #F0F0F0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pc input:focus {
+    border: 2px solid #064665;
+    outline: none;
+    box-shadow: 0 0 0 0; 
+}   
+
+.pc input::-webkit-outer-spin-button,
+.pc input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pc input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pnc {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.pnc label{
+    position: absolute;
+    left: 0;
+    transform: translatey(-46px);
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+} 
+
+.pnc input {
+    width: 600px;
+    height: 60px;
+    border: 2px solid #064665;
+    border-radius: 3px;
+    background-color: #19688E;
+    color: #F0F0F0;
+    padding-left: 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pnc input::placeholder {
+    color: #F0F0F0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pnc input:focus {
+    border: 2px solid #064665;
+    outline: none;
+    box-shadow: 0 0 0 0; 
+}   
+
+.pnc input::-webkit-outer-spin-button,
+.pnc input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pnc input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pl {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.pl label{
+    position: absolute;
+    left: 0;
+    transform: translatey(-46px);
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+} 
+
+.pl input {
+    width: 600px;
+    height: 60px;
+    border: 2px solid #064665;
+    border-radius: 3px;
+    background-color: #19688E;
+    color: #F0F0F0;
+    padding-left: 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pl input::placeholder {
+    color: #F0F0F0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+}
+
+.pl input:focus {
+    border: 2px solid #064665;
+    outline: none;
+    box-shadow: 0 0 0 0; 
+}   
+
+.pl input::-webkit-outer-spin-button,
+.pl input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pl input[type=number] {
+  -moz-appearance: textfield;
+}

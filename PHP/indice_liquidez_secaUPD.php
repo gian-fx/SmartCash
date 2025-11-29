@@ -37,6 +37,7 @@ if (isset($_POST["atc"]) && isset($_POST["estoque"]) && isset($_POST["pc"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/gian.css">
+    <link rel="stylesheet" href="/CSS/if.css">
     <title>SmartCash</title>
 </head>
 <body>
