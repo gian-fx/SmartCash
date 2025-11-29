@@ -27,7 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $peresult = $gastos_fixos / $margem_contribuicao;
     $peresultValor = $peresult * $preco_venda;
 
-   
+    $formatado = number_format($peresult, 0, ',', '.');
+    $peresult = $formatado;
+
+    $formatado2 = number_format($peresultValor, 2, ',', '.');
+    $peresultValor = $formatado2;
 }
 ?>
 
@@ -39,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
         <link rel="stylesheet" href="/CSS/jose.css">
+        <link rel="stylesheet" href="/CSS/gian.css">
+
         <title>SmartCash</title>
     </head>
     <body>
@@ -81,6 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label for="margem_contribuicao">Margem de contribuição: </label>
                         <input type="number" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
                     </div>
+
+                    <!-- PE de VALOR -->
+                    <div class="prmej">
+                        <label for="preco_venda">Valor de Venda: </label>
+                        <input type="number" placeholder="Adicione sua informação aqui" required id="preco_venda" name="preco_venda">
+                    </div>
     
                     <div class="btn">
                         <button type="submit">ENVIAR</button>
@@ -89,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
             <div class="resultado">
-                <p>Seu ponto de equilibrio é de</p>
+                <p>Seu ponto de equilibrio em uniadades é de</p>
                 <p><?= $peresult ?> Unidades</p>
                 <p>Seu ponto de equilibrio em valor é</p>
                 <p><?= $peresultValor ?> Reais</p>

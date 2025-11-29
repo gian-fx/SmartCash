@@ -20,7 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $gastovariavel = $nada;
     }
 
+    if (isset($_POST['qntd']) && !empty($_POST['qntd'])) {
+        $qntd = $_POST['qntd'];
+    } else {
+        $qntd = $nada;
+    }
+
+    
+
     $mcresult = $precovenda - $gastovariavel;
+    
+    $mctotalresult = $mcresult * $qntd;
+    $formatado = number_format($mctotalresult, 2, ',', '.');
+    $mctotalresult = $formatado;
+    
 }
 ?>
 
@@ -31,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
         <link rel="stylesheet" href="/CSS/jose.css">
+         <link rel="stylesheet" href="/CSS/gian.css">
         <title>SmartCash</title>
     </head>
     <body>
@@ -73,6 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label class="pmr" for="gv">Gasto Variavel </label>
                         <input class="pmr" type="number" placeholder="Adicione sua informação aqui" required id="gv" name="gv">
                     </div>
+
+                    <div class="pmr">
+                        <label class="pmr" for="qntd">Quantidade </label>
+                        <input class="pmr" type="number" placeholder="Adicione sua informação aqui" required id="qntd" name="qntd">
+                    </div>
                 
                     <div class="btn">
                         <button type="submit">ENVIAR</button>
@@ -82,10 +101,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             </div>
 
-            <div class="resultado">
-                <p>Sua Margem de Contribuição é</p>
-                <span><?= $mcresult ?></span>
-            </div>
+        <div class="resultado">
+            <p>Sua Margem de Contribuição é</p>
+            <p><?= $mcresult ?></p>
+            <p>Sua Margem de Contribuição Total é</p>
+            <p><?= $mctotalresult ?></p>
+        </div>
             
         </div>
     </body>
