@@ -31,21 +31,39 @@
         </div>
 
         <div class="voltar">
-            <a href="/operacoes/if.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Indice de Rentabilidade</p>
+            <a href="/operacoes/indice_rentabilidade.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
+            <p>Retorno sobre o Investimento</p>
         </div>
 
-        <div class="botoes">
-            <div class="apertar">
-                <a href="/operacoes/ir_retorno.html" class="clicar">Retorno sobre Investimento</a>
-            </div>
-            <div class="apertar">
-                <a href="/operacoes/ir_capital.html" class="clicar">Rentabilidade do Capital de Giro</a>
-            </div>
-            <div class="apertar">
-                <a href="/operacoes/ir_margem.html" class="clicar">Margem Liquida</a>
+        <div class="formgrid">
+            <div class="formcontainer">
+                <form method="POST" action="/PHP/ir_retorno.php">
+                    <div class="input">
+                        <label for="lucro">Lucro</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="lucro" name="lucro">
+                    </div>
+
+                    <div class="input">
+                        <label for="ativo_total">Ativo Total</label>
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="ativo_total" name="ativo_total">
+                    </div>
+
+
+                    <div class="btn">
+                        <button type="submit">ENVIAR</button>
+                    </div>
+
+                </form>
+
             </div>
 
+            <div class="resultado">
+                    <p>O retorno sobre o Investimento é :</p>
+                    <span><?= $result ?></span>
+                    
+                    <span><?= $result_percentual ?></span>
+            </div>
+        </div>
 
     </body>
 </html>

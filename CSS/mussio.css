@@ -76,7 +76,7 @@
     height: 50px;
 }
 
-.resultado .resultadoccc {
+.resultado .resultadoccc .resultado_retorno {
     display: block;
     position: relative;
     transform: translatey(70px);
@@ -84,6 +84,9 @@
     font-size: 36px;
     color: #E0E0E0;
 }
+
+
+
 
 .btn {
     display: flex;
@@ -106,4 +109,37 @@
 .btn button:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 250px);
+    gap: 5rem;
+}
+
+.clicar{
+    display: flex;
+    width: 360px;
+    height: 200px;
+    border: none;
+    color: #002638;
+    background-color: #328AB4;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.apertar:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 7px 11px 6px rgba(0,0,0,0.28);
+    font-weight: bold;
+}
+
+.apertar a {
+    font-family: "Oswald", sans-serif;
 }
