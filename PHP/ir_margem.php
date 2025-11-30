@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="resultado">
-                    <p>O retorno sobre o Investimento é :</p>
+                    <p>A Margem Liquida é :</p>
                     <span><p><?= $result ?></p></span>
                     <p>ou</p>
                     <span><p><?= $result_percentual ?>%</p></span>

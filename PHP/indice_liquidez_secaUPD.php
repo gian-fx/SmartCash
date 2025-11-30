@@ -94,7 +94,7 @@ if (isset($_POST["atc"]) && isset($_POST["estoque"]) && isset($_POST["pc"])) {
         </div>
 
         <div class="resultado_lc">
-            <p>Índice de Liquidez Seca:</p>
+            <p>O Indice de Liquidez Seca é:</p>
             <span class="resultadolcc"><?= $result ?></span>
         </div>
 

@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="voltar">
             <a href="/operacoes/indice_rentabilidade.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Retorno sobre o Investimento</p>
+            <p>Retorno Sobre o Investimento</p>
         </div>
 
         <div class="formgrid">
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="resultado">
-                    <p>O retorno sobre o Investimento é :</p>
+                    <p>O Retorno Sobre o Investimento é :</p>
                     <span><p><?= $result ?></p></span>
                     <p>ou</p>
                     <span><p><?= $result_percentual ?>%</p></span>

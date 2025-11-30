@@ -62,7 +62,7 @@ if (isset($_POST["disp"]) && isset($_POST["pc"])) {
 
         <div class="voltar">
             <a href="/operacoes/indice_liquidez.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Indice de liquidez Imediata</p>
+            <p>Indice de Liquidez Imediata</p>
         </div>
 
         <div class="formgrid">
@@ -88,7 +88,7 @@ if (isset($_POST["disp"]) && isset($_POST["pc"])) {
             </div>
 
             <div class="resultado_lc">
-                    <p>O indice de liquidez imediata é :</p>
+                    <p>O Indice de Liquidez Imediata é :</p>
                     <span class="resultadolcc" ><?= $result ?></span>
             </div>
         </div>

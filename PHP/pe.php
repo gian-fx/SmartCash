@@ -101,9 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
             <div class="resultado">
-                <p>Seu ponto de equilibrio em uniadades é de</p>
+                <p>Seu Ponto de Equilibrio em uniadades é de</p>
                 <p><?= $peresult ?> Unidades</p>
-                <p>Seu ponto de equilibrio em valor é</p>
+                <p>Seu Ponto de Equilibrio em valor é</p>
                 <p><?= $peresultValor ?> Reais</p>
             </div>
         </div>
