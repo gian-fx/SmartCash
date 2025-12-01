@@ -18,20 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $margem_contribuicao = $nada;
     }
-    if (isset($_POST['preco_venda']) && !empty($_POST['preco_venda'])){
-        $preco_venda = $_POST['preco_venda'];
-    } else {
-        $preco_venda = $nada;
-    }
 
     $peresult = $gastos_fixos / $margem_contribuicao;
-    $peresultValor = $peresult * $preco_venda;
 
     $formatado = number_format($peresult, 0, ',', '.');
     $peresult = $formatado;
-
-    $formatado2 = number_format($peresultValor, 2, ',', '.');
-    $peresultValor = $formatado2;
 }
 ?>
 
@@ -72,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="voltar">
             <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
             <p>Ponto de Equilíbrio</p>
+            <span><a href="/operacoes/pevalor.html">Fórmula em Valor</a></span>
         </div>
 
         <div class="formgrid">
@@ -88,12 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="number" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
                     </div>
 
-                    <!-- PE de VALOR -->
-                    <div class="prmej">
-                        <label for="preco_venda">Valor de Venda: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="preco_venda" name="preco_venda">
-                    </div>
-    
                     <div class="btn">
                         <button type="submit">ENVIAR</button>
                     </div>
@@ -101,10 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
             <div class="resultado">
-                <p>Seu Ponto de Equilibrio em uniadades é de</p>
-                <p><?= $peresult ?> Unidades</p>
-                <p>Seu Ponto de Equilibrio em valor é</p>
-                <p><?= $peresultValor ?> Reais</p>
+                <p>Seu Ponto de Equilibrio em unidades é de:</p>
+                <span><p><?= $peresult ?> Unidades</p></span>
             </div>
         </div>
     </body>

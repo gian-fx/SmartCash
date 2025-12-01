@@ -121,4 +121,27 @@ body {
   }
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #328AB4;
+    background: linear-gradient(180deg,rgba(50, 138, 180, 1) 0%, rgba(25, 104, 142, 1) 100%);
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 200ms;
+}
+
+.btn button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 

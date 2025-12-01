@@ -1,4 +1,4 @@
-<?php
+<?php 
 error_reporting(0);
 ini_set('display_errors', 0);
 
@@ -7,35 +7,34 @@ $nada = "Dado não informado!";
 $exibir = $_SERVER['REQUEST_METHOD'] == 'POST' ? true : false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if (isset($_POST['pv']) && !empty($_POST['pv'])) {
-        $precovenda = $_POST['pv'];
+    if (isset($_POST['gastos_fixos']) && !empty($_POST['gastos_fixos'])) {
+        $gastos_fixos = $_POST['gastos_fixos'];
     } else {
-        $precovenda = $nada;
+        $gastos_fixos = $nada;
     }
 
-    if (isset($_POST['gv']) && !empty($_POST['gv'])) {
-        $gastovariavel = $_POST['gv'];
+    if (isset($_POST['margem_contribuicao']) && !empty($_POST['margem_contribuicao'])) {
+        $margem_contribuicao = $_POST['margem_contribuicao'];
     } else {
-        $gastovariavel = $nada;
+        $margem_contribuicao = $nada;
+    }
+    if (isset($_POST['preco_venda']) && !empty($_POST['preco_venda'])){
+        $preco_venda = $_POST['preco_venda'];
+    } else {
+        $preco_venda = $nada;
     }
 
-    if (isset($_POST['qntd']) && !empty($_POST['qntd'])) {
-        $qntd = $_POST['qntd'];
-    } else {
-        $qntd = $nada;
-    }
+    $peresult = $gastos_fixos / $margem_contribuicao;
+    $peresultValor = $peresult * $preco_venda;
 
-    
+    $formatado = number_format($peresult, 0, ',', '.');
+    $peresult = $formatado;
 
-    $mcresult = $precovenda - $gastovariavel;
-    
-    $mctotalresult = $mcresult * $qntd;
-    $formatado = number_format($mctotalresult, 2, ',', '.');
-    $mctotalresult = $formatado;
-    
+    $formatado2 = number_format($peresultValor, 2, ',', '.');
+    $peresultValor = $formatado2;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
         <link rel="stylesheet" href="/CSS/jose.css">
-         <link rel="stylesheet" href="/CSS/gian.css">
+        <link rel="stylesheet" href="/CSS/gian.css">
+
         <title>SmartCash</title>
     </head>
     <body>
@@ -71,43 +71,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="voltar">
             <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-            <p>Margem de Contribuição</p>
+            <p>Ponto de Equilíbrio</p>
         </div>
 
         <div class="formgrid">
             <div class="formcontainer">
-                <form action="/PHP/mc.php" method="POST">
-                
-                    <div class="pv">
-                        <label class="pv" for="pv">Preço de Venda </label>
-                        <input class="pv" type="number" placeholder="Adicione sua informação aqui" required id="pv" name="pv">
+                <form action="/PHP/pe.php" method="POST">
+    
+                    <div class="prmej">
+                        <label for="gastos_fixos">Gastos Fixos: </label>
+                        <input type="number" placeholder="Adicione sua informação aqui" required id="gastos_fixos" name="gastos_fixos">
                     </div>
-                
-                    <div class="gv">
-                        <label class="gv" for="gv">Gasto Variavel </label>
-                        <input class="gv" type="number" placeholder="Adicione sua informação aqui" required id="gv" name="gv">
+    
+                    <div class="prmrj">
+                        <label for="margem_contribuicao">Margem de contribuição: </label>
+                        <input type="number" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
                     </div>
 
-                    <div class="qntd">
-                        <label class="qntd" for="qntd">Quantidade </label>
-                        <input class="qntd" type="number" placeholder="Adicione sua informação aqui" required id="qntd" name="qntd">
+                    <!-- PE de VALOR -->
+                    <div class="prmej">
+                        <label for="preco_venda">Valor de Venda: </label>
+                        <input type="number" placeholder="Adicione sua informação aqui" required id="preco_venda" name="preco_venda">
                     </div>
-                
+    
                     <div class="btn">
                         <button type="submit">ENVIAR</button>
                     </div>
                     
                 </form>
-
             </div>
-
-        <div class="resultado">
-            <p>Sua Margem de Contribuição é</p>
-            <p><?= $mcresult ?></p>
-            <p>Sua Margem de Contribuição Total é</p>
-            <p><?= $mctotalresult ?></p>
-        </div>
-            
+            <div class="resultado">
+                <p>Seu Ponto de Equilibrio em unidades é de:</p>
+                <p><?= $peresult ?> Unidades</p>
+                <p>Seu Ponto de Equilibrio em valor é:</p>
+                <p><?= $peresultValor ?> Reais</p>
+            </div>
         </div>
     </body>
 </html>

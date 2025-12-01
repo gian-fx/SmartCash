@@ -55,6 +55,12 @@
     margin-bottom: 0.5rem;
 }
 
+.pme input:focus, .pmr input:focus, .pmp input:focus{
+    border: 2px solid #064665;
+    outline: none;
+    box-shadow: 0 0 0 0; 
+}
+
 .pme input::placeholder,
 .pmr input::placeholder,
 .pmp input::placeholder {
@@ -89,7 +95,7 @@
     width: 180px;
     height: 55px;
     background-color: #064665;
-    color: white;
+    color: #00111a;
     border: none;
     border-radius: 10px;
     font-size: 22px;
@@ -121,7 +127,7 @@
     font-family: "Nunito", sans-serif;
     font-size: 24px;
     color: #E0E0E0;
-    margin-top: 25px;
+    margin-top: 120px;
 }
 
 .results {

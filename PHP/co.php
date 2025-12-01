@@ -111,9 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="resultado">
             <p>Seu Ciclo de Operação de Tempo é</p>
-            <p><?= $coresult ?></p>
+            <p><?= $coresult ?> Dias</p>
             <p>Seu Ciclo de Operação de Valor é</p>
-            <p><?= $coValorresult ?></p>
+            <p><?= $coValorresult ?> Reais</p>
         </div>
     </div>
 </body>

@@ -36,6 +36,7 @@
     <div class="voltar">
         <a href="/index.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
         <p>Ponto de Equilíbrio</p>
+        <span><a href="/operacoes/pevalor.html">Fórmula em Valor</a></span>
     </div>
 
     <div class="formgrid">
@@ -54,14 +55,6 @@
                         name="margem_contribuicao">
                 </div>
 
-                <!-- PE de VALOR -->
-                <div class="prmej">
-                    <label for="preco_venda">Valor de Venda: </label>
-                    <input type="number" placeholder="Adicione sua informação aqui" required id="preco_venda"
-                        name="preco_venda">
-                </div>
-
-
                 <div class="btn">
                     <button type="submit">ENVIAR</button>
                 </div>
@@ -69,13 +62,10 @@
             </form>
         </div>
         <div class="resultado">
-            <p>Seu Ponto de Equilibrio em uniadades é de</p>
+            <p>Seu Ponto de Equilibrio em unidades é de:</p>
             <p>
                 <?= $peresult ?>
                 </?>
-            <p>Seu Ponto de Equilibrio em valor é</p>
-            <p>
-                <?= $peresultValor ?>
             </p>
         </div>
     </div>
