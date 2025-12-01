@@ -40,36 +40,37 @@ foreach ($campos as $nome => $valor) {
     }
 }
 
-// Converte %
-$inadimplencia_atual /= 100;
-$inadimplencia_proposta /= 100;
-$taxa_financeira /= 100;
+/// Converte %
+ $inadimplencia_atual /= 100;
+ $inadimplencia_proposta /= 100;
+ $taxa_financeira /= 100;
 
-// 1️⃣ RECEITA LÍQUIDA
-$receita_atual    = $qtd_atual * $preco_atual * (1 - $inadimplencia_atual);
-$receita_proposta = $qtd_proposta * $preco_proposto * (1 - $inadimplencia_proposta);
+// Adicional ao lucro
+$addLucro = ($qtd_proposta - $qtd_atual) * ($preco_atual - $gasto_unitario_atual);
 
-// 2️⃣ CUSTO TOTAL
-$custo_atual    = $qtd_atual * $gasto_unitario_atual;
-$custo_proposta = $qtd_proposta * $gasto_unitario_proposto;
+// Custo do invertimento marginal em duplicatas a receber
+$investimentoAtual = ($qtd_atual * $gasto_unitario_atual) / (360 / $prazo_atual);
+$investimentoProposto = ($qtd_proposta * $gasto_unitario_proposto) / (360 / $prazo_proposto);
+$necessidadeInvestimento = $investimentoProposto - $investimentoAtual;
 
-// 3️⃣ LUCRO
-$lucro_atual    = $receita_atual - $custo_atual;
-$lucro_proposta = $receita_proposta - $custo_proposta;
+$cimdr = $necessidadeInvestimento * $taxa_financeira; 
 
-// 4️⃣ CUSTO FINANCEIRO
-$fin_atual = ($qtd_atual * $preco_atual * ($prazo_atual / 360)) * $taxa_financeira;
-$fin_proposta = ($qtd_proposta * $preco_proposto * ($prazo_proposto / 360)) * $taxa_financeira;
+// Custo com perdas marginais
+$perdaAtual =  $qtd_atual * $preco_atual * $inadimplencia_atual;
+$perdaProposta =  $qtd_proposta * $preco_proposto * $inadimplencia_proposta;
+$cpm = $perdaProposta - $perdaAtual;
 
-// 5️⃣ ANÁLISE MARGINAL
-$analise_marginal = ($lucro_proposta - $lucro_atual) - ($fin_proposta - $fin_atual);
+// Resultado final da analise marginal
+$analise_marginal = $addLucro - $cimdr - $cpm;
+
+
 
 function moeda($v)
-{
-    return "R$ " . number_format($v, 2, ',', '.');
+ {
+     return "R$ " . number_format($v, 2, ',', '.');
 }
 
-$lucro_liquido_formatado = moeda($analise_marginal);
+ $lucro_liquido_formatado = moeda($analise_marginal);
 
 ?>
 
@@ -108,7 +109,7 @@ $lucro_liquido_formatado = moeda($analise_marginal);
 
     <div class="voltar">
         <a href="/operacoes/am.html"><img src="/IMG/btn_voltar.svg" alt=""></a>
-        <p>Ciclo Operacional</p>
+        <p>Analise marginal</p>
     </div>
 
     <div class="resultado">
