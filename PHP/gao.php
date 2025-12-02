@@ -69,13 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="formcontainer">
                 <form method="POST" action="/PHP/gao.php">
                     <div class="input">
-                        <input required type="number" placeholder="Adicione sua informação aqui" id="mc" name="mc">
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="mc" name="mc">
                         <label for="mc">Margem de Contribuição</label>
                     </div>
 
                     <div class="input">
                         <label for="lucro">Lucro</label>
-                        <input required type="number" placeholder="Adicione sua informação aqui" id="lucro" name="lucro">
+                        <input required type="text" placeholder="Adicione sua informação aqui" id="lucro" name="lucro">
                     </div>
 
                     <div class="btn">

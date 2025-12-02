@@ -80,12 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                     <div class="pv">
                         <label class="pv" for="pv">Preço de Venda </label>
-                        <input class="pv" type="number" placeholder="Adicione sua informação aqui" required id="pv" name="pv">
+                        <input class="pv" type="text" placeholder="Adicione sua informação aqui" required id="pv" name="pv">
                     </div>
                 
                     <div class="gv">
                         <label class="gv" for="gv">Gasto Variavel </label>
-                        <input class="gv" type="number" placeholder="Adicione sua informação aqui" required id="gv" name="gv">
+                        <input class="gv" type="text" placeholder="Adicione sua informação aqui" required id="gv" name="gv">
                     </div>
 
                     <div class="qntd">

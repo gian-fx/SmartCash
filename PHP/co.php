@@ -1,4 +1,15 @@
 <?php 
+
+
+function to_float($valor)
+{
+    $valor = str_replace(',', '.', $valor); // substitui vírgula por ponto
+    return (float)$valor;
+}
+
+$pmeV = to_float($_POST['prmeV'] ?? 0);
+$pmrV = to_float($_POST['prmrV'] ?? 0);
+
 error_reporting(0);
 ini_set('display_errors', 0);
 
@@ -95,12 +106,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <!-- CO de VALOR -->
                 <div class="prmej">
                     <label for="prmeV">Preço Médio de Estoque (VALOR)</label>
-                    <input type="number" placeholder="Adicione sua informação aqui" required id="prme" name="prmeV">
+                    <input type="text" placeholder="Adicione sua informação aqui" required id="prme" name="prmeV">
                 </div>
 
                 <div class="prmrj">
                     <label for="prmrV">Preço Médio de Recebimento (VALOR)</label>
-                    <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmrV">
+                    <input type="text" placeholder="Adicione sua informação aqui" required id="prmr" name="prmrV">
                 </div>
 
                 <div class="btn">

@@ -86,7 +86,7 @@ if (isset($_POST["atc"]) && isset($_POST["pc"])) {
 
         <div class="resultado_lc">
             <p>Índice de Liquidez Corrente:</p>
-            <span class="resultadolcc"><?= $result ?></span>
+            <span class="resultadolcc"><?= $result ?></span> 
         </div>
     </div>
   </body>

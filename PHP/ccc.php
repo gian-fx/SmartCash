@@ -1,4 +1,17 @@
 <?php
+
+function to_float($valor)
+{
+    $valor = str_replace(',', '.', $valor); // substitui vírgula por ponto
+    return (float)$valor;
+}
+
+$pmeV = to_float($_POST['pmeV'] ?? 0);
+$pmrV = to_float($_POST['pmrV'] ?? 0);
+$pmpV = to_float($_POST['pmpV'] ?? 0);
+
+
+
 error_reporting(0);
 ini_set('display_errors', 0);
 

@@ -1,4 +1,15 @@
 <?php 
+
+function to_float($valor)
+{
+    $valor = str_replace(',', '.', $valor); // substitui vírgula por ponto
+    return (float)$valor;
+}
+
+$gastos_fixos = to_float($_POST['gastos_fixos'] ?? 0);
+$margem_contribuicao = to_float($_POST['margem_contribuicao'] ?? 0);
+$preco_venda = to_float($_POST['preco_venda'] ?? 0);
+
 error_reporting(0);
 ini_set('display_errors', 0);
 
@@ -80,18 +91,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
                     <div class="prmej">
                         <label for="gastos_fixos">Gastos Fixos: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="gastos_fixos" name="gastos_fixos">
+                        <input type="text" placeholder="Adicione sua informação aqui" required id="gastos_fixos" name="gastos_fixos">
                     </div>
     
                     <div class="prmrj">
                         <label for="margem_contribuicao">Margem de contribuição: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
+                        <input type="text" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
                     </div>
 
                     <!-- PE de VALOR -->
                     <div class="prmej">
                         <label for="preco_venda">Valor de Venda: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="preco_venda" name="preco_venda">
+                        <input type="text" placeholder="Adicione sua informação aqui" required id="preco_venda" name="preco_venda">
                     </div>
     
                     <div class="btn">

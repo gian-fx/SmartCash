@@ -1,4 +1,8 @@
 <?php 
+
+
+
+
 error_reporting(0);
 ini_set('display_errors', 0);
 
@@ -72,12 +76,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
                     <div class="prmej">
                         <label for="gastos_fixos">Gastos Fixos: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="gastos_fixos" name="gastos_fixos">
+                        <input type="text" placeholder="Adicione sua informação aqui" required id="gastos_fixos" name="gastos_fixos">
                     </div>
     
                     <div class="prmrj">
                         <label for="margem_contribuicao">Margem de contribuição: </label>
-                        <input type="number" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
+                        <input type="text" placeholder="Adicione sua informação aqui" required id="margem_contribuicao" name="margem_contribuicao">
                     </div>
 
                     <div class="btn">
@@ -88,6 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="resultado">
                 <p>Seu Ponto de Equilibrio em unidades é de:</p>
+                <p><?= $gastos_fixos ?></p>
+                <p><?= $margem_contribuicao ?></p>
                 <span><p><?= $peresult ?> Unidades</p></span>
             </div>
         </div>

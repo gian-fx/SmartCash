@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $lucro / $ativo_total;
     $result_percentual = $result * $mult;
 
-    $formatado = number_format($result, 2, ',', '.');
+    $formatado = number_format($result, 3, ',', '.');
     $formatado2 = number_format($result_percentual, 2, ',', '.');
     $result = $formatado;
     $result_percentual = $formatado2;
