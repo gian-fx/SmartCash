@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['pmeV']) && !empty($_POST['pmeV'])) {
 
         $pmeV = $_POST['pmeV'];
-        $pmeV = ($pmeV * $pme) / 360;
+        $pmeV = ($pmeV / 360) * $pme;
         
     } else {
 
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['pmrV']) && !empty($_POST['pmrV'])) {
 
         $pmrV = $_POST['pmrV'];
-        $pmrV = ($pmrV * $pmr) / 360;
+        $pmrV = ($pmrV / 360) * $pmr;
     } else {
 
         $pmrV = $nada;
@@ -71,13 +71,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['pmpV']) && !empty($_POST['pmpV'])) {
 
         $pmpV = $_POST['pmpV'];
-        $pmpV = ($pmpV * $pmp) / 360;
+        $pmpV = ($pmpV / 360) * $pmp;
     } else {
 
         $pmpV = $nada;
     }
 
-    $cccValorresult = $pmeV + $pmrV - $pmpV;
+    $cccValorresult = ($pmeV + $pmrV) - $pmpV;
     $formatado = number_format($cccValorresult, 2, ',', '.');
     $cccValorresult = $formatado;
 }

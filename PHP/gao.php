@@ -27,6 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gaoresult = $mc / $lucro;
 }
 
+
+    $formatado = number_format($gaoresult, 2, ',', '.');
+    $gaoresult = $formatado;
+
 ?>
 
 <!DOCTYPE html>

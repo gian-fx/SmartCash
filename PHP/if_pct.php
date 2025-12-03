@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="formcontainer">
                 <form method="POST" action="/PHP/if_pct.php">
                     <div class="pc">
-                        <label for="pc">Passivo Criculante</label>
+                        <label for="pc">Passivo Circulante</label>
                         <input required type="text" placeholder="Adicione sua informação aqui" id="pc" name="pc">
                     </div>
 

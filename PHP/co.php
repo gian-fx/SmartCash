@@ -95,22 +95,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form action="/PHP/co.php" method="post">
 
                 <div class="prmej">
-                    <label for="prme">Preço Médio de Estoque </label>
+                    <label for="prme">Prazo Médio de Estoque </label>
                     <input type="number" placeholder="Adicione sua informação aqui" required id="prme" name="prme">
                 </div>
 
                 <div class="prmrj">
-                    <label for="prmr">Preço Médio de Recebimento </label>
+                    <label for="prmr">Prazo Médio de Recebimento </label>
                     <input type="number" placeholder="Adicione sua informação aqui" required id="prmr" name="prmr">
                 </div>
                 <!-- CO de VALOR -->
                 <div class="prmej">
-                    <label for="prmeV">Preço Médio de Estoque (VALOR)</label>
+                    <label for="prmeV">Prazo Médio de Estoque (VALOR)</label>
                     <input type="text" placeholder="Adicione sua informação aqui" required id="prme" name="prmeV">
                 </div>
 
                 <div class="prmrj">
-                    <label for="prmrV">Preço Médio de Recebimento (VALOR)</label>
+                    <label for="prmrV">Prazo Médio de Recebimento (VALOR)</label>
                     <input type="text" placeholder="Adicione sua informação aqui" required id="prmr" name="prmrV">
                 </div>
 
